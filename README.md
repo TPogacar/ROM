@@ -1,4 +1,4 @@
 # ROM
 
-uporabniško ime == TPogacar
-povezava do repozitorija == 
+uporabniško ime == TPogacar \n
+povezava do repozitorija == https://github.com/TPogacar/ROM.git
