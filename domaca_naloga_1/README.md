@@ -1,7 +1,7 @@
 # rezervirala sem naslednje naloge:
 
 ### [Učni list - Naravna in cela števila.pdf](https://www.sc-nm.si/sss/si/file/download/861_0affa8c3752b/Učni%20list%20-%20Naravna%20in%20cela%20števila.pdf)
--6
+- 6
 
 ### [Učni list - Deljivost.pdf](https://www.sc-nm.si/sss/si/file/download/860_7c1612944279/Učni%20list%20-%20Deljivost.pdf)
 - 11
