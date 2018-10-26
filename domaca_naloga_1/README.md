@@ -30,9 +30,6 @@
 ### [Učni list - Pravokotni koordinatni sistem.pdf](https://www.sc-nm.si/sss/si/file/download/834_5ffe0b5e352d/Učni%20list%20-%20Pravokotni%20koordinatni%20sistem.pdf)
 - 4
 
-### [Učni list - Linearna funkcija.pdf](https://www.sc-nm.si/sss/si/file/download/835_a3b1692363f8/Učni%20list%20-%20Linearna%20funkcija.pdf)
-- 4
-
 ### [Učni list - Sistemi linearnih enačb.pdf](https://www.sc-nm.si/sss/si/file/download/836_975520bdf6aa/Učni%20list%20-%20Sistemi%20linearnih%20enačb.pdf)
 - 4
 
