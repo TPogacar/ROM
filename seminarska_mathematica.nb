@@ -1,0 +1,1768 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     69222,       1760]
+NotebookOptionsPosition[     60822,       1615]
+NotebookOutlinePosition[     61239,       1631]
+CellTagsIndexPosition[     61196,       1628]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["SEMINARSKA NALOGA - Mathematica", "Title",
+ CellChangeTimes->{{3.753012651682185*^9, 
+  3.7530126625941277`*^9}},ExpressionUUID->"f2cac9ca-d34a-4f4e-88fb-\
+fe62947d3557"],
+
+Cell["Tamara Poga\[CHacek]ar, Prakti\[CHacek]na Matematika, FMF UL", "Author",
+ CellChangeTimes->{{3.7530248727061496`*^9, 
+  3.7530249325005207`*^9}},ExpressionUUID->"ff5adb2f-5e22-41aa-add1-\
+cbbbf5532202"],
+
+Cell[CellGroupData[{
+
+Cell["FIZIKA - Izpitna pola 2, Petek, 9. junij 2017", "Chapter",
+ CellChangeTimes->{{3.753012673774625*^9, 
+  3.753012709635201*^9}},ExpressionUUID->"1acc8103-d401-4fa3-88d2-\
+96614c6ae747"],
+
+Cell["vir: https://www.ric.si/mma/M171-411-1-2/2017101014420471/", "Text",
+ CellChangeTimes->{{3.753012733763727*^9, 3.753012754426729*^9}, {
+  3.753013940243332*^9, 
+  3.753013940243332*^9}},ExpressionUUID->"89b7576c-1e1f-4de7-8fe8-\
+090350a18f9e"],
+
+Cell[CellGroupData[{
+
+Cell["2. MEHANIKA", "Section",
+ CellChangeTimes->{{3.753012780116359*^9, 
+  3.753012793992921*^9}},ExpressionUUID->"b7d33372-c959-45a0-bedf-\
+a32d0067f638"],
+
+Cell["\<\
+Kroglico z maso 0,10 kg spustimo v prosto padanje z vi\[SHacek]ine H = 2,0 m \
+nad tlemi. Pri vseh vpra\[SHacek]anjih te naloge privzemite, da je zra\
+\[CHacek]ni upor zanemarljiv in da je kroglica dovolj majhna, da njenih \
+dimenzij ni treba upo\[SHacek]tevati.\
+\>", "Text",
+ CellChangeTimes->{{3.753012812023402*^9, 3.753012854846675*^9}, {
+  3.753013366529947*^9, 
+  3.753013370984725*^9}},ExpressionUUID->"7a0985ae-9836-4603-8600-\
+2922828893f4"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"m", ",", " ", "H", ",", " ", "gg"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", " ", "=", " ", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gg", " ", "=", " ", "9.81"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7530133269718504`*^9, 3.7530133989089327`*^9}, {
+  3.753013453946104*^9, 3.753013462680663*^9}, {3.7530140097671647`*^9, 
+  3.753014066104694*^9}, {3.753014159462022*^9, 3.7530142033819723`*^9}, {
+  3.7530144833137894`*^9, 
+  3.7530145660099335`*^9}},ExpressionUUID->"6a4f55f0-6bfc-4b4b-bdbc-\
+a9741a37aa3c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics", "[", " ", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+        RowBox[{"Point", "[", 
+         RowBox[{"{", 
+          RowBox[{"0.5", ",", " ", "H"}], "}"}], "]"}], ",", " ", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+            RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"0.7", ",", " ", 
+            RowBox[{"H", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Dashing", "[", 
+         RowBox[{"{", 
+          RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", " ", "H"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", " ", "H"}], "}"}]}], "}"}], "]"}]}], "}"}], ",",
+       "\[IndentingNewLine]", 
+      RowBox[{"Line", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", " ", 
+           RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", 
+           RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Axes", "\[Rule]", 
+     RowBox[{"{", "True", "}"}]}], ",", " ", 
+    RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+    RowBox[{"AxesStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.15"}], ",", " ", 
+         RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+    RowBox[{"Ticks", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"False", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "h0", ",", " ", "H"}], "}"}]}], "}"}]}]}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7530147152201104`*^9, 3.7530148061653733`*^9}, {
+   3.7530148542996693`*^9, 3.7530149030953207`*^9}, {3.7530149605632944`*^9, 
+   3.7530151164379835`*^9}, {3.753015207130522*^9, 3.7530152160362062`*^9}, {
+   3.753015256146763*^9, 3.753015403159328*^9}, {3.753015434001802*^9, 
+   3.7530154378133693`*^9}, {3.7530155012374125`*^9, 
+   3.7530155718115034`*^9}, {3.75302517862897*^9, 3.753025184435726*^9}, {
+   3.7530252182049437`*^9, 3.7530252472228403`*^9}, {3.7530252850314417`*^9, 
+   3.753025523537032*^9}, {3.753025558894579*^9, 3.7530255608030624`*^9}, {
+   3.7530256170523176`*^9, 3.7530257786218834`*^9}, {3.7530258392547436`*^9, 
+   3.753025877190135*^9}, {3.7530259144515905`*^9, 3.7530259171823816`*^9}, {
+   3.7530259623179708`*^9, 3.7530260658005238`*^9}, {3.753026155336892*^9, 
+   3.7530261683485303`*^9}, {3.753026206772523*^9, 3.753026237524392*^9}, {
+   3.7530262826938233`*^9, 3.753026360756787*^9}, {3.7530264864161386`*^9, 
+   3.753026561361063*^9}, {3.7530265942821693`*^9, 3.7530267183792887`*^9}, 
+   3.753026773679139*^9, {3.753026804214676*^9, 3.7530268248795905`*^9}, {
+   3.753026860106202*^9, 3.7530268974857674`*^9}, {3.7530269292697363`*^9, 
+   3.753027034539954*^9}, {3.753027066288335*^9, 3.753027098979497*^9}, {
+   3.753027136360564*^9, 3.753027150583709*^9}, {3.753027184013524*^9, 
+   3.753027374032117*^9}, {3.7530274119887424`*^9, 3.75302750969514*^9}, {
+   3.75302758832345*^9, 3.753027838768964*^9}, {3.753027924626685*^9, 
+   3.753027948710772*^9}, {3.7530280470830865`*^9, 3.7530280475948367`*^9}, {
+   3.7530332495483675`*^9, 
+   3.753033268357585*^9}},ExpressionUUID->"20022fa6-9924-470f-b3dc-\
+cd71ab50fbde"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], PointBox[{0.5, 2}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 2.1}]}, 
+   {Dashing[{0.05, 0.05}], LineBox[{{0, 2}, {1, 2}}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {1.5, 
+      FormBox["1.5`", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{
+  3.753027100166478*^9, {3.75302714016116*^9, 3.753027151734439*^9}, {
+   3.753027248774132*^9, 3.7530272930663805`*^9}, {3.753027347201375*^9, 
+   3.753027374704071*^9}, {3.753027414141961*^9, 3.7530274451496735`*^9}, {
+   3.7530274893591213`*^9, 3.7530275102542667`*^9}, {3.7530276923978863`*^9, 
+   3.753027740549904*^9}, {3.753027773789282*^9, 3.7530278396796303`*^9}, {
+   3.753027927201705*^9, 3.75302795592794*^9}, 3.7530280489986506`*^9, {
+   3.7530332578490534`*^9, 3.7530332688159122`*^9}, {3.753246901468765*^9, 
+   3.753246904762114*^9}},ExpressionUUID->"cad5bb5b-ac41-47d6-9a4c-\
+68169395d452"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.1. ", "Subsubsection",
+ CellChangeTimes->{3.75301341156278*^9, 
+  3.753013574273763*^9},ExpressionUUID->"73cb2a16-40ae-40a1-a12e-\
+2453a7403815"],
+
+Cell["Izra\[CHacek]unajte, koliko \[CHacek]asa pada kroglica do tal.", "Text",
+ CellChangeTimes->{
+  3.753013858706756*^9},ExpressionUUID->"b4c9451f-930f-4bd0-8656-\
+db7d8f83264e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "casDoTal", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"casDoTal", " ", "=", " ", 
+  RowBox[{"Sqrt", "[", 
+   FractionBox[
+    RowBox[{"2", "*", "H"}], "gg"], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7530134376386247`*^9, 3.7530134475348487`*^9}, {
+  3.753014272419275*^9, 3.7530142807466173`*^9}, {3.753014452472685*^9, 
+  3.753014470818804*^9}, {3.753018044577829*^9, 
+  3.753018052022323*^9}},ExpressionUUID->"d8e54c57-e908-492b-8100-\
+1d551a919e08"],
+
+Cell[BoxData["0.638550856814101`"], "Output",
+ CellChangeTimes->{3.7530144738924704`*^9, 3.753014569507495*^9, 
+  3.7530242014003*^9, 
+  3.75324690149214*^9},ExpressionUUID->"dfa0f300-12a6-443c-9dc6-c97b46da06d9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.2. ", "Subsubsection",
+ CellChangeTimes->{{3.753013882210499*^9, 
+  3.7530138913996425`*^9}},ExpressionUUID->"a44c3739-1283-4dc5-aee8-\
+187c0bfd154a"],
+
+Cell["Izra\[CHacek]unajte hitrost, s katero kroglica tr\[CHacek]i ob tla. ", \
+"Text",
+ CellChangeTimes->{
+  3.7530134218340797`*^9, {3.7530138634112415`*^9, 
+   3.753013889283922*^9}},ExpressionUUID->"05a9d51c-6ae7-4fe2-add9-\
+b6aa44e3322c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "hitrostObTrku", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"hitrostObTrku", " ", "=", " ", 
+  RowBox[{"0", " ", "-", " ", 
+   RowBox[{"gg", " ", "*", " ", "casDoTal"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7530145920547056`*^9, 3.75301466237873*^9}, {
+  3.7530180313123913`*^9, 
+  3.7530180370824924`*^9}},ExpressionUUID->"cbccda03-3a8b-4f5c-b59c-\
+8921cb18d550"],
+
+Cell[BoxData[
+ RowBox[{"-", "6.26418390534633`"}]], "Output",
+ CellChangeTimes->{3.7530146406938896`*^9, 3.753014676035905*^9, 
+  3.7530242014592695`*^9, 
+  3.7532469015080166`*^9},ExpressionUUID->"98c16037-8359-4095-aad9-\
+e1bf95aa6ee0"]
+}, Open  ]],
+
+Cell["\<\
+Kroglica se od tal odbije navpi\[CHacek]no navzgor. Ker odboj ni popolnoma \
+pro\[ZHacek]en, je hitrost takoj po odboju od tal nekoliko manj\[SHacek]a, \
+kot je bila tik pred odbojem. Hitrost kroglice po odboju je tolik\[SHacek]na, \
+da se lahko dvigne do najve\[CHacek] h0 = 1,5 m  nad tlemi.\
+\>", "Text",
+ CellChangeTimes->{{3.753015622817994*^9, 
+  3.753015642827364*^9}},ExpressionUUID->"a38f14b6-422f-4bcc-ae62-\
+382341e27cd9"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "h0", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h0", " ", "=", " ", "1.5"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7530157803722963`*^9, 3.753015785718693*^9}, {
+  3.7530180186516542`*^9, 
+  3.7530180259325027`*^9}},ExpressionUUID->"6476652d-89c9-48a5-aac3-\
+dafa887700cd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.3.", "Subsubsection",
+ CellChangeTimes->{{3.7530156952138023`*^9, 
+  3.7530156976759677`*^9}},ExpressionUUID->"14d37ca4-0c50-4eef-8c40-\
+30157c456303"],
+
+Cell["\<\
+Izra\[CHacek]unajte, kolik\[SHacek]na je hitrost kroglice takoj po odboju od \
+tal. \
+\>", "Text",
+ CellChangeTimes->{
+  3.7530157100932093`*^9},ExpressionUUID->"9db7df2b-8088-4be9-aa48-\
+9e80120f3bf3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "hitrostPoOdboju", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"hitrostPoOdboju", " ", "=", " ", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"2", "*", "gg", "*", "h0"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7530158072299075`*^9, 3.7530158297945533`*^9}, {
+  3.753017975035077*^9, 
+  3.753017982415022*^9}},ExpressionUUID->"549f5494-0fda-4ae3-ba20-\
+6374adab0db0"],
+
+Cell[BoxData["5.424942396007538`"], "Output",
+ CellChangeTimes->{3.7530158308908815`*^9, 3.7530242015706763`*^9, 
+  3.7532469015377398`*^9},ExpressionUUID->"936debf2-702f-4213-bd4b-\
+f710b2a73a07"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vektorHitrosti", "[", 
+   RowBox[{"visina_", ",", " ", "hitrost_"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Arrow", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", " ", "visina"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", " ", 
+       RowBox[{"(", 
+        RowBox[{"visina", " ", "+", " ", 
+         FractionBox["hitrost", "20"]}], ")"}]}], "}"}]}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.753031524825173*^9, 3.7530316304608192`*^9}, {
+   3.7530316827737455`*^9, 3.753031727750767*^9}, {3.7530318923577113`*^9, 
+   3.753031937440586*^9}, {3.7530323319329424`*^9, 3.7530324033954887`*^9}, {
+   3.753032650955923*^9, 3.7530326826382847`*^9}, {3.753032866368328*^9, 
+   3.7530328667851276`*^9}, {3.7530329042482004`*^9, 3.7530329201466494`*^9}, 
+   3.7530330305662594`*^9, {3.753033062536907*^9, 3.753033105702238*^9}, {
+   3.753248769831748*^9, 3.753248943530635*^9}, {3.7532489827450266`*^9, 
+   3.7532490254620547`*^9}, {3.75324913202474*^9, 3.753249213905472*^9}, {
+   3.75324924567035*^9, 3.7532494049929094`*^9}, {3.753249512537971*^9, 
+   3.7532495380641613`*^9}, {3.75324959972949*^9, 
+   3.7532496018979626`*^9}},ExpressionUUID->"152f0b11-bc94-432a-b22d-\
+47378d6a411b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", "0"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.7", ",", " ", 
+           RowBox[{"0", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vektorHitrosti", "[", 
+        RowBox[{"0", ",", " ", "hitrostPoOdboju"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<hitrostPoOdboju\>\"", ",", "Gray", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.275", ",", " ", "0.15"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", "True", "}"}]}], ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.15"}], ",", " ", 
+        RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "H"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.753246866653663*^9, 3.7532468698191957`*^9}, {
+  3.753246926211354*^9, 
+  3.753247089902302*^9}},ExpressionUUID->"74204724-db9d-48a7-bf44-\
+9e38e91fcb88"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], PointBox[{0.5, 0}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 0.1}]}, {
+    ArrowBox[{{0.5, 0}, {0.5, 0.2712471198003769}}], InsetBox[
+     StyleBox["\<\"hitrostPoOdboju\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0.5],
+      FrontFaceColor->GrayLevel[0.5],
+      BackFaceColor->GrayLevel[0.5],
+      GraphicsColor->GrayLevel[0.5],
+      FontSize->10,
+      FontColor->GrayLevel[0.5]], {0.275, 0.15}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{{3.7532468899437647`*^9, 3.753246927404789*^9}, {
+   3.7532469646659403`*^9, 3.7532470416150265`*^9}, {3.7532470835572724`*^9, 
+   3.7532470909767513`*^9}, 3.753249033976259*^9, 3.753249166427829*^9, 
+   3.753249407338376*^9, 
+   3.753249541097067*^9},ExpressionUUID->"a157617d-7053-4e43-b86e-\
+0ada6ff14beb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.4.", "Subsubsection",
+ CellChangeTimes->{{3.7530157253047895`*^9, 
+  3.753015727560525*^9}},ExpressionUUID->"e5e4138b-971f-470d-b36d-\
+e0066450b3f5"],
+
+Cell["\<\
+Izra\[CHacek]unajte, za koliko je kineti\[CHacek]na energija kroglice takoj \
+po odboju od tal manj\[SHacek]a od kineti\[CHacek]ne energije tik pred \
+odbojem kroglice. \
+\>", "Text",
+ CellChangeTimes->{
+  3.753015751693636*^9},ExpressionUUID->"359234b2-6d91-40e9-afe1-\
+f625f0fe58d8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "spremembaEnergije", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"spremembaEnergije", " ", "=", " ", 
+  FractionBox[
+   RowBox[{"m", "*", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["hitrostPoOdboju", "2"], "-", 
+      SuperscriptBox["hitrostObTrku", "2"]}], ")"}]}], "2"]}]}], "Input",
+ CellChangeTimes->{{3.7530159122246275`*^9, 3.7530159450245714`*^9}, {
+  3.7530172140763855`*^9, 3.753017255235151*^9}, {3.753017989452547*^9, 
+  3.7530180076925774`*^9}},ExpressionUUID->"5c9aab4e-5335-4a9c-b3c0-\
+c109808b5f26"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.49049999999999994`"}]], "Output",
+ CellChangeTimes->{3.753015947141444*^9, 3.7530172588270655`*^9, 
+  3.7530242016269493`*^9, 
+  3.753246901583914*^9},ExpressionUUID->"aed1335f-8211-4697-874e-\
+bd6c4630cda5"]
+}, Open  ]],
+
+Cell["\<\
+V istem trenutku (t = 0), kot se prva kroglica odbije od tal, spustimo prosto \
+padati drugo kroglico z vi\[SHacek]ine h0 = 1,5 m (to je vi\[SHacek]ina, do \
+katere bi se dvignila prva kroglica po odboju). Ker se kroglici gibljeta po \
+isti premici, v trenutku t = 0,277 s tr\[CHacek]ita na neki vi\[SHacek]ini od \
+tal (hT ). Privzemite, da se kroglici ob trku sprimeta. Masa druge kroglice \
+je enaka masi prve kroglice.\
+\>", "Text",
+ CellChangeTimes->{{3.753017326297773*^9, 3.7530173288371515`*^9}, {
+  3.7530174743469024`*^9, 3.753017481058217*^9}, {3.753017777552764*^9, 
+  3.753017818677532*^9}, {3.753025049755991*^9, 
+  3.753025053251437*^9}},ExpressionUUID->"82676589-d045-4b05-80db-\
+da8f6766e73a"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", " ", "=", " ", "0.277"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.75301783021288*^9, 3.753017854982665*^9}, {
+  3.7530180650224147`*^9, 
+  3.753018070353908*^9}},ExpressionUUID->"92ae568a-449c-4751-8255-\
+e5bbe76fbaa0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Green", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", "h0"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 2\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.35", ",", " ", 
+           RowBox[{"h0", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", "0"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.7", ",", " ", 
+           RowBox[{"0", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vektorHitrosti", "[", 
+        RowBox[{"0", ",", " ", "hitrostPoOdboju"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<v0\>\"", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.4", ",", " ", "0.15"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Dashing", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "h0"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "h0"}], "}"}]}], "}"}], "]"}]}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", "True", "}"}]}], ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.15"}], ",", " ", 
+        RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "h0", ",", " ", "H"}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.753028076952506*^9, {3.753028271651784*^9, 3.7530283254739475`*^9}, {
+   3.7530283563909802`*^9, 3.7530283873313894`*^9}, {3.753031795427346*^9, 
+   3.75303185918948*^9}, {3.7530320229251842`*^9, 3.7530320340476503`*^9}, {
+   3.7530329854808893`*^9, 3.7530329881894073`*^9}, {3.753033134460208*^9, 
+   3.7530331441785135`*^9}, {3.753033195323016*^9, 3.753033226541923*^9}, {
+   3.753033300631285*^9, 3.7530334214754157`*^9}, {3.753033463679406*^9, 
+   3.7530334752802258`*^9}},ExpressionUUID->"eec8ba2c-8e5f-4c67-9d6e-\
+c2edbececfab"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0, 1, 0], PointSize[0.1], PointBox[{0.5, 1.5}], InsetBox[
+     StyleBox["\<\"krogljica 2\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.35, 1.6}]}, 
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], PointBox[{0.5, 0}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 0.1}]}, {
+    ArrowBox[{{0.5, 0}, {0.5, 0.2712471198003769}}], InsetBox[
+     StyleBox["\<\"v0\"\>",
+      StripOnInput->False,
+      FontSize->10], {0.4, 0.15}]}, 
+   {Dashing[{0.05, 0.05}], LineBox[{{0, 1.5}, {1, 1.5}}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {1.5, 
+      FormBox["1.5`", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{
+  3.7532495527334757`*^9},ExpressionUUID->"5dc971fe-fba7-463b-84a8-\
+c57f36da3db1"]
+}, Open  ]],
+
+Cell["\<\
+Slika 1: V trenutko, ko se prva krogljica odbije od tal, z vi\[SHacek]ine 1,5 \
+m nad tlemi spustimo drugo, enako kroglico.\
+\>", "SubsubitemParagraph",
+ CellChangeTimes->{{3.75303446815285*^9, 
+  3.753034567038143*^9}},ExpressionUUID->"7d84e5a0-0d29-4f13-aca3-\
+543832b2d8f9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Green", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", 
+          RowBox[{"hT", "+", "0.02"}]}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 2\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.35", ",", " ", 
+           RowBox[{"hT", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", 
+          RowBox[{"hT", "-", "0.02"}]}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.7", ",", " ", 
+           RowBox[{"hT", "-", "0.05"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Dashing", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "hT"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "hT"}], "}"}]}], "}"}], "]"}]}], "}"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", "True", "}"}]}], ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.15"}], ",", " ", 
+        RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"Round", "[", 
+         RowBox[{"hT", ",", " ", "0.01"}], "]"}], ",", " ", "h0", ",", " ", 
+        "H"}], "}"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.753034599052286*^9, 3.753034657433811*^9}, {
+  3.753034696826288*^9, 3.7530347315949583`*^9}, {3.7530347940992904`*^9, 
+  3.7530348078889503`*^9}, {3.75324725971826*^9, 3.7532472660718503`*^9}, {
+  3.753247302542386*^9, 
+  3.7532473110165653`*^9}},ExpressionUUID->"f201a4e3-9c45-4ea8-9802-\
+379b6bde50f7"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0, 1, 0], PointSize[0.1], PointBox[{0.5, 1.1436442549999999`}], 
+    InsetBox[
+     StyleBox["\<\"krogljica 2\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.35, 1.223644255}]}, 
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], 
+    PointBox[{0.5, 1.1036442549999999`}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 1.0736442549999998}]}, 
+   {Dashing[{0.05, 0.05}], 
+    LineBox[{{0, 1.1236442549999999`}, {1, 1.1236442549999999`}}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {1.12, 
+      FormBox["1.12`", TraditionalForm]}, {1.5, 
+      FormBox["1.5`", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{
+  3.753034667864358*^9, {3.753034699297101*^9, 3.753034732037016*^9}, {
+   3.7530348006131988`*^9, 3.75303480880886*^9}, 3.753246901659631*^9, {
+   3.753247238524971*^9, 3.7532472670506926`*^9}, 3.7532473122242064`*^9, 
+   3.7532494162634044`*^9, 
+   3.7532495667100153`*^9},ExpressionUUID->"5f80c9ba-994b-4ee7-9083-\
+fad8acef73c8"]
+}, Open  ]],
+
+Cell["\<\
+Slika 2: Kroglici se v nekem trenutku sre\[CHacek]ata na neki vi\[SHacek]ini \
+od tal in nepro\[ZHacek]no tr\[CHacek]ita.\
+\>", "SubsubitemParagraph",
+ CellChangeTimes->{{3.7530348351978555`*^9, 
+  3.753034906386846*^9}},ExpressionUUID->"09cb5c50-409a-4e2d-a2b5-\
+882e9cf8b2c4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.5.", "Subsubsection",
+ CellChangeTimes->{{3.7530173520132165`*^9, 
+  3.75301735438914*^9}},ExpressionUUID->"ad35086c-3a9d-4a69-b37c-\
+87abe2b96880"],
+
+Cell["\<\
+Izra\[CHacek]unajte hitrosti obeh kroglic tik pred trkom in vi\[SHacek]ino, \
+na kateri se sre\[CHacek]ata.\
+\>", "Text",
+ CellChangeTimes->{{3.7530173604017344`*^9, 
+  3.753017364604404*^9}},ExpressionUUID->"150685a7-e9e1-4d38-a323-\
+1b1f582a1daf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"v1", ",", " ", "v2"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"v1", " ", "=", " ", 
+  RowBox[{"hitrostPoOdboju", " ", "-", " ", 
+   RowBox[{"gg", "*", "t"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"v2", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"-", "gg"}], "*", "t"}]}], "\[IndentingNewLine]", 
+ RowBox[{"hT", " ", "=", " ", 
+  RowBox[{"h0", " ", "-", " ", 
+   FractionBox[
+    RowBox[{"gg", "*", 
+     SuperscriptBox["t", "2"]}], "2"]}]}]}], "Input",
+ CellChangeTimes->{{3.7530179047539473`*^9, 3.753017963095123*^9}, {
+  3.7530180795248137`*^9, 3.753018106694654*^9}, {3.753023430456292*^9, 
+  3.7530234684008193`*^9}},ExpressionUUID->"493ff332-2526-4fc1-8874-\
+4845fb279cf7"],
+
+Cell[BoxData["2.7075723960075373`"], "Output",
+ CellChangeTimes->{3.7530181132383204`*^9, 3.7530234860117984`*^9, 
+  3.7530242017393184`*^9, 
+  3.7532469016917353`*^9},ExpressionUUID->"6c3dc560-4eb7-4c82-981f-\
+d611c1e86b3c"],
+
+Cell[BoxData[
+ RowBox[{"-", "2.7173700000000003`"}]], "Output",
+ CellChangeTimes->{3.7530181132383204`*^9, 3.7530234860117984`*^9, 
+  3.7530242017393184`*^9, 
+  3.7532469016962223`*^9},ExpressionUUID->"5f34d3a2-9743-4546-b196-\
+f2f768e787d3"],
+
+Cell[BoxData["1.1236442549999999`"], "Output",
+ CellChangeTimes->{3.7530181132383204`*^9, 3.7530234860117984`*^9, 
+  3.7530242017393184`*^9, 
+  3.753246901699108*^9},ExpressionUUID->"0fa8e7b9-1f85-427a-b84c-\
+c5353332a795"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.6.", "Subsubsection",
+ CellChangeTimes->{{3.7530173761441107`*^9, 
+  3.7530173773043284`*^9}},ExpressionUUID->"df3c3907-15de-4e40-82fb-\
+71fe88759580"],
+
+Cell["\<\
+Kolik\[SHacek]ni sta skupna hitrost in skupna kineti\[CHacek]na energija \
+kroglic takoj po trku? Odgovor utemeljite. \
+\>", "Text",
+ CellChangeTimes->{
+  3.753017386367466*^9},ExpressionUUID->"a063ab2d-0d74-463c-b91f-\
+58779b0acee3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"skupnaKineticnaEnergija", ",", " ", "skupnaHitrost"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"skupnaHitrost", " ", "=", " ", 
+  FractionBox[
+   RowBox[{"m", 
+    RowBox[{"(", 
+     RowBox[{"v1", " ", "+", " ", "v2"}], ")"}]}], 
+   RowBox[{"2", "*", "m"}]]}], "\[IndentingNewLine]", 
+ RowBox[{"skupnaKineticnaEnergija", " ", "=", " ", 
+  FractionBox[
+   RowBox[{"m", "*", 
+    SuperscriptBox["skupnaHitrost", "2"]}], "2"]}]}], "Input",
+ CellChangeTimes->{{3.753018145948041*^9, 3.7530182091580334`*^9}, {
+  3.7530182546353226`*^9, 3.7530183202126284`*^9}, {3.7530183929900837`*^9, 
+  3.7530184070600643`*^9}},ExpressionUUID->"aef0e431-3869-4298-9233-\
+d3a93261b4fb"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.004898801996231494`"}]], "Output",
+ CellChangeTimes->{3.753018324211214*^9, 3.75301840834156*^9, 
+  3.753024201817669*^9, 
+  3.7532469017137737`*^9},ExpressionUUID->"90170b27-ce33-4cd4-bfff-\
+6ca2d4df1c80"],
+
+Cell[BoxData["1.1999130499140838`*^-6"], "Output",
+ CellChangeTimes->{3.753018324211214*^9, 3.75301840834156*^9, 
+  3.753024201817669*^9, 
+  3.753246901718074*^9},ExpressionUUID->"e37171e9-402b-405b-bafc-\
+7040261e9acd"]
+}, Open  ]],
+
+Cell["\<\
+Ker sta hitrosti \[ZHacek]ogic tik pred trkom skoraj enaki, je po trku njuna \
+skupna hitrost pribli\[ZHacek]ek 0 (ni\[CHacek]) v smeri druge \[ZHacek]o\
+\[CHacek]ice (navzdol, tj. v negativni smeri), saj je bila tik pred trkom za \
+odtenek hitrej\[SHacek]a. Ker je kineti\[CHacek]na energija telesa s stalno \
+maso odvisna zgolj od njene hitrosti, je v na\[SHacek]em primeru (ko je \
+hitrost proakti\[CHacek]no 0),  tudi kineti\[CHacek]na energija \[ZHacek]ogic \
+tik po trgu zelo blizu 0.\
+\>", "SubitemParagraph",
+ CellChangeTimes->{{3.75301847066*^9, 3.7530187476038647`*^9}, {
+  3.753247512419387*^9, 
+  3.753247534561381*^9}},ExpressionUUID->"8cf368a4-12df-43fa-9932-\
+a8f4f33010b0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.7.", "Subsubsection",
+ CellChangeTimes->{{3.7530174019066024`*^9, 
+  3.753017403651972*^9}},ExpressionUUID->"43e9f9ac-59bb-4aff-a28a-\
+75eaa97eb70a"],
+
+Cell["\<\
+Izra\[CHacek]unajte razliko med skupno za\[CHacek]etno potencialno energijo \
+obeh kroglic (preden ju spustimo v padanje) in njuno skupno potencialno \
+energijo, ki jo imata kroglici takoj po trku druga ob drugo. (Potencialne \
+energije lahko ra\[CHacek]unate glede na tla, zra\[CHacek]ni upor pa je ves \
+\[CHacek]as zanemarljiv.)\
+\>", "Text",
+ CellChangeTimes->{{3.753017408898241*^9, 
+  3.753017414229583*^9}},ExpressionUUID->"36daece5-06eb-4d18-8e52-\
+56961e2c9f7d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "zacetnaPotencialna1", ",", "zacetnaPotencialna2", ",", " ", 
+   "koncnaPotencialna1", ",", " ", "koncnaPotencialna2", ",", "  ", 
+   "razlikaPotencialnihEnergij"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"razlikaPotencialnihEnergij", "[", 
+   RowBox[{
+   "zacetnaVisina1_", ",", " ", "zacetnaVisina2_", ",", " ", "visinaTrka_"}], 
+   "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "zacetnaPotencialna1", ",", " ", "zacetnaPotencialna2", ",", " ", 
+      "koncnaPotencialna1", ",", " ", "koncnaPotencialna2"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"zacetnaPotencialna1", " ", "=", 
+      RowBox[{"m", "*", "gg", "*", "zacetnaVisina1"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"zacetnaPotencialna2", " ", "=", " ", 
+      RowBox[{"m", "*", "gg", "*", "zacetnaVisina2"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"koncnaPotencialna1", " ", "=", " ", 
+      RowBox[{"m", "*", "gg", "*", "visinaTrka"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"koncnaPotencialna2", " ", "=", 
+      RowBox[{"m", "*", "gg", "*", "visinaTrka"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"razlikaPotencialnihEnergij", " ", "=", " ", 
+      RowBox[{
+      "zacetnaPotencialna1", " ", "+", " ", "zacetnaPotencialna2", " ", "-", 
+       " ", "koncnaPotencialna1", " ", "-", " ", "koncnaPotencialna2"}]}]}]}],
+    "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"razlikaPotencialnihEnergij", "[", 
+  RowBox[{"H", ",", " ", "h0", ",", " ", "hT"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7530228944466743`*^9, 3.753022980226564*^9}, {
+  3.7530230202012367`*^9, 3.7530230897716827`*^9}, {3.7530231278798876`*^9, 
+  3.753023170848328*^9}, {3.753023217172401*^9, 3.7530232245383077`*^9}, {
+  3.7530233888009987`*^9, 3.753023391259654*^9}, {3.7530235561114917`*^9, 
+  3.7530235803643584`*^9}, {3.7532475703756313`*^9, 
+  3.7532477776535826`*^9}},ExpressionUUID->"e780dfa5-1a8e-4fee-a7b5-\
+9e1482233ad2"],
+
+Cell[BoxData["1.2289099716900003`"], "Output",
+ CellChangeTimes->{3.7532477788028793`*^9, 
+  3.753249422733184*^9},ExpressionUUID->"98bb223b-ecee-4ac6-9403-\
+63b9b836fefd"]
+}, Open  ]],
+
+Cell["", "SubitemParagraph",ExpressionUUID->"d4a9e76c-c289-4c66-8075-7767997cc288"],
+
+Cell["\<\
+Poskus ponovimo tako, da v istem trenutku (t = 0), kot se prva kroglica \
+odbije od tal, spustimo v prosto padanje drugo kroglico (masi kroglic sta \
+enaki) s prvotne vi\[SHacek]ine H = 2,0 m nad tlemi. Kroglici se spet \
+gibljeta po isti premici in v nekem trenutku t tr\[CHacek]ita na neki vi\
+\[SHacek]ini od tal (h). Pri trku se sprimeta. \
+\>", "Text",
+ CellChangeTimes->{
+  3.7530174264287786`*^9, {3.753023804084027*^9, 3.7530238091047835`*^9}, {
+   3.7530238415626674`*^9, 
+   3.7530238557381525`*^9}},ExpressionUUID->"1f957b1a-f926-49b9-99f2-\
+40a286b1b1cd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Green", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", "H"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 2\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.35", ",", " ", 
+           RowBox[{"H", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", "0"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.7", ",", " ", 
+           RowBox[{"0", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vektorHitrosti", "[", 
+        RowBox[{"0", ",", " ", "hitrostPoOdboju"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<v0\>\"", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.4", ",", " ", "0.15"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Dashing", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "H"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "H"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", "True", "}"}]}], ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.15"}], ",", " ", 
+        RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "h0", ",", " ", "H"}], "}"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7530349583113127`*^9, 
+  3.7530349840643635`*^9}},ExpressionUUID->"681b0713-8cbe-4ec2-bef4-\
+150cf9609aec"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0, 1, 0], PointSize[0.1], PointBox[{0.5, 2}], InsetBox[
+     StyleBox["\<\"krogljica 2\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.35, 2.1}]}, 
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], PointBox[{0.5, 0}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 0.1}]}, {
+    ArrowBox[{{0.5, 0}, {0.5, 0.2712471198003769}}], InsetBox[
+     StyleBox["\<\"v0\"\>",
+      StripOnInput->False,
+      FontSize->10], {0.4, 0.15}]}, 
+   {Dashing[{0.05, 0.05}], LineBox[{{0, 2}, {1, 2}}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {1.5, 
+      FormBox["1.5`", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{3.753034947377561*^9, 3.7530349950486155`*^9, 
+  3.7532469018505373`*^9, 3.753249428072933*^9, 
+  3.7532495728945513`*^9},ExpressionUUID->"88cb95e2-b4c3-4414-83b4-\
+8c42f39ff078"]
+}, Open  ]],
+
+Cell["\<\
+Slika: drugo krogljico spustimo z vi\[SHacek]ine H = 2 v trenutku, ko se 1. \
+krogljica odbije od tal.\
+\>", "SubsubitemParagraph",
+ CellChangeTimes->{{3.7532479271226788`*^9, 
+  3.7532479936652365`*^9}},ExpressionUUID->"513b84a5-d9af-41f0-9856-\
+b2360567a830"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Green", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", 
+          RowBox[{"h", "+", "0.02"}]}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 2\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.35", ",", " ", 
+           RowBox[{"h", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vektorHitrosti", "[", 
+        RowBox[{"h", ",", " ", "hitrost2"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<hitrost2\>\"", ",", "Green", ",", "  ", 
+           RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.65", ",", " ", 
+           RowBox[{"h", "+", "0.1"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+       RowBox[{"Point", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", " ", 
+          RowBox[{"h", "-", "0.02"}]}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.7", ",", " ", 
+           RowBox[{"h", "-", "0.05"}]}], "}"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"vektorHitrosti", "[", 
+        RowBox[{"h", ",", " ", "hitrost1"}], "]"}], ",", " ", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<hitrost1\>\"", ",", " ", "Red", ",", " ", 
+           RowBox[{"FontSize", "\[Rule]", "10"}]}], "]"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"0.38", ",", 
+           RowBox[{"h", "-", "0.12"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Dashing", "[", 
+        RowBox[{"{", 
+         RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", "h"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "h"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Line", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", 
+          RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Axes", "\[Rule]", 
+    RowBox[{"{", "True", "}"}]}], ",", " ", 
+   RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.15"}], ",", " ", 
+        RowBox[{"H", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"False", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{"Round", "[", 
+         RowBox[{"h", ",", " ", "0.01"}], "]"}], ",", " ", "H"}], "}"}]}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7532482759959793`*^9, 3.753248318948493*^9}, {
+  3.753248418234992*^9, 3.753248479283883*^9}, {3.75324851482022*^9, 
+  3.7532485198263693`*^9}, {3.7532485724080086`*^9, 3.7532485890704794`*^9}, {
+  3.7532486965840373`*^9, 3.753248705377845*^9}, {3.753249831306279*^9, 
+  3.7532498918110657`*^9}, {3.7532499403861637`*^9, 3.753249948117531*^9}, {
+  3.7532500216662426`*^9, 
+  3.7532501010200915`*^9}},ExpressionUUID->"a6f77b91-8139-4ca6-a4c6-\
+7ba5b554b28c"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0, 1, 0], PointSize[0.1], PointBox[{0.5, 0.6866666666666665}], 
+    InsetBox[
+     StyleBox["\<\"krogljica 2\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.35, 0.7666666666666665}]}, {
+    ArrowBox[{{0.5, 0.6666666666666665}, {0.5, 0.48583525346641526`}}], 
+    InsetBox[
+     StyleBox["\<\"hitrost2\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[0, 1, 0],
+      FrontFaceColor->RGBColor[0, 1, 0],
+      BackFaceColor->RGBColor[0, 1, 0],
+      GraphicsColor->RGBColor[0, 1, 0],
+      FontSize->10,
+      FontColor->RGBColor[0, 1, 0]], {0.65, 0.7666666666666665}]}, 
+   {RGBColor[1, 0.5, 0.5], PointSize[0.1], 
+    PointBox[{0.5, 0.6466666666666665}], InsetBox[
+     StyleBox["\<\"krogljica 1\"\>",
+      StripOnInput->False,
+      LineColor->GrayLevel[0],
+      FrontFaceColor->GrayLevel[0],
+      BackFaceColor->GrayLevel[0],
+      GraphicsColor->GrayLevel[0],
+      FontSize->10,
+      FontColor->GrayLevel[0]], {0.7, 0.6166666666666665}]}, {
+    ArrowBox[{{0.5, 0.6666666666666665}, {0.5, 0.7570823732667922}}], InsetBox[
+     StyleBox["\<\"hitrost1\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[1, 0, 0],
+      FrontFaceColor->RGBColor[1, 0, 0],
+      BackFaceColor->RGBColor[1, 0, 0],
+      GraphicsColor->RGBColor[1, 0, 0],
+      FontSize->10,
+      FontColor->RGBColor[1, 0, 0]], {0.38, 0.5466666666666665}]}, 
+   {Dashing[{0.05, 0.05}], 
+    LineBox[{{0, 0.6666666666666665}, {1, 0.6666666666666665}}]}, 
+   LineBox[{{0, -0.05}, {1, -0.05}}]},
+  Axes->{True},
+  AxesLabel->FormBox["y", TraditionalForm],
+  AxesStyle->{
+    Thickness[Large], 
+    Thickness[Tiny]},
+  PlotRange->{{0, 1}, {-0.15, 2.15}},
+  Ticks->{False, {{0, 
+      FormBox["0", TraditionalForm]}, {0.67, 
+      FormBox["0.67`", TraditionalForm]}, {2, 
+      FormBox["2", TraditionalForm]}}}]], "Output",
+ CellChangeTimes->{{3.7532482997100554`*^9, 3.753248319825886*^9}, 
+   3.753248483577677*^9, {3.7532485210093985`*^9, 3.7532485254137745`*^9}, {
+   3.753248585089279*^9, 3.753248589812148*^9}, 3.7532487064084516`*^9, 
+   3.753249433206859*^9, 3.753249577241255*^9, {3.7532498464736967`*^9, 
+   3.7532498928369007`*^9}, 3.7532499491041355`*^9, {3.7532500233281384`*^9, 
+   3.753250101444163*^9}},ExpressionUUID->"d65f5b36-ecf2-41e0-ac55-\
+6264821057da"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.8.", "Subsubsection",
+ CellChangeTimes->{{3.7530174411045456`*^9, 
+  3.7530174427049856`*^9}},ExpressionUUID->"b70201d3-5d47-435c-bd0d-\
+3754435ab74c"],
+
+Cell["\<\
+Izra\[CHacek]unajte, \[CHacek]ez koliko \[CHacek]asa se kroglici \
+sre\[CHacek]ata, ter navedite, v katero smer (navzgor ali navzdol) in s kolik\
+\[SHacek]no hitrostjo se takoj po trku giblje sprimek kroglic v tem primeru. \
+Odgovor utemeljite.\
+\>", "Text",
+ CellChangeTimes->{{3.7530174471588793`*^9, 
+  3.7530174487260375`*^9}},ExpressionUUID->"fa9170e4-437f-4c67-8ba2-\
+0088311cba03"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"t", ",", " ", "hitrost1", ",", " ", "hitrost2"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"t", " ", "=", " ", 
+  FractionBox["H", "hitrostPoOdboju"]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hitrost1", " ", "=", " ", 
+   RowBox[{"hitrostPoOdboju", "-", 
+    RowBox[{"gg", "*", "t"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hitrost2", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"-", "gg"}], "*", "t"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"hitrostSkupna", " ", "=", " ", 
+  FractionBox[
+   RowBox[{"hitrost1", " ", "+", " ", "hitrost2"}], "2"]}]}], "Input",
+ CellChangeTimes->{{3.753023932663791*^9, 3.7530239408084173`*^9}, {
+  3.753024014927705*^9, 3.753024085020174*^9}, {3.7530241520407457`*^9, 
+  3.753024177287612*^9}, {3.753024226862607*^9, 3.7530242782211933`*^9}, {
+  3.753024345618533*^9, 3.7530244410523996`*^9}, {3.7530245107457237`*^9, 
+  3.7530246152443247`*^9}, {3.753248718687932*^9, 
+  3.7532487315148754`*^9}},ExpressionUUID->"965f5161-8574-4172-ba9f-\
+8586545dabc2"],
+
+Cell[BoxData["0.3686675090728873`"], "Output",
+ CellChangeTimes->{{3.7530240783222976`*^9, 3.753024085988615*^9}, 
+   3.753024146788597*^9, {3.7530241781805334`*^9, 3.7530242019987984`*^9}, 
+   3.7530242716102858`*^9, {3.7530245907968893`*^9, 3.753024615725689*^9}, 
+   3.7532469018965054`*^9, {3.753248720662877*^9, 
+   3.753248732359054*^9}},ExpressionUUID->"91424a96-73dc-435b-bf85-\
+72e37dd6745b"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.9041570660012561`"}]], "Output",
+ CellChangeTimes->{{3.7530240783222976`*^9, 3.753024085988615*^9}, 
+   3.753024146788597*^9, {3.7530241781805334`*^9, 3.7530242019987984`*^9}, 
+   3.7530242716102858`*^9, {3.7530245907968893`*^9, 3.753024615725689*^9}, 
+   3.7532469018965054`*^9, {3.753248720662877*^9, 
+   3.7532487323626456`*^9}},ExpressionUUID->"f1b26d21-35d7-46a1-b59d-\
+3828151df924"]
+}, Open  ]],
+
+Cell["\<\
+Kroglici se sre\[CHacek]ata po 0,37 s in se takoj po trku gibljeta v smeri \
+druge krogljice (navzdol) s hitrostjo 0,9 m/s.\
+\>", "SubitemParagraph",
+ CellChangeTimes->{{3.7530246409678974`*^9, 3.7530247424863076`*^9}, {
+  3.7530247735756593`*^9, 
+  3.7530248175805936`*^9}},ExpressionUUID->"3429f757-77fa-42c3-82bb-\
+0b2e0f88872a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "h", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"h", "=", " ", 
+  FractionBox[
+   RowBox[{"gg", "*", 
+    SuperscriptBox["t", "2"]}], "2"]}]}], "Input",
+ CellChangeTimes->{{3.7532480567890368`*^9, 
+  3.7532481915346193`*^9}},ExpressionUUID->"ddbb6198-ee59-4839-801d-\
+5554917b46e0"],
+
+Cell[BoxData["0.6666666666666665`"], "Output",
+ CellChangeTimes->{3.753248145281418*^9, 
+  3.7532481987091713`*^9},ExpressionUUID->"d8e50840-7e00-4d58-b264-\
+79bef9b16b69"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Animacije:", "Section",
+ CellChangeTimes->{{3.753250163632635*^9, 
+  3.753250170607221*^9}},ExpressionUUID->"f25758c1-cf7e-438c-85ad-\
+c49a866244d9"],
+
+Cell["Sledijo animacije gibanja krogljic za zgornje probleme.", "Text",
+ CellChangeTimes->{{3.7532501944063816`*^9, 
+  3.7532502628435545`*^9}},ExpressionUUID->"551da67c-8472-4245-868f-\
+64203f7f7f44"],
+
+Cell[CellGroupData[{
+
+Cell["Ena krogljica - spustimo jo z vi\[SHacek]ine H = 2:", "Subsection",
+ CellChangeTimes->{{3.7532503091782393`*^9, 
+  3.753250343020937*^9}},ExpressionUUID->"16d6b736-3ff1-4e91-9a60-\
+5bc617a7d186"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{"Graphics", "[", " ", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"PointSize", "[", "0.1", "]"}], ",", "Pink", ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.5", ",", " ", "visina"}], "}"}], "]"}], ",", " ", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<krogljica 1\>\"", ",", "Black", ",", " ", 
+             RowBox[{"FontSize", "\[Rule]", " ", "10"}]}], "]"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"0.7", ",", " ", 
+             RowBox[{"visina", " ", "+", "0.1"}]}], "}"}]}], "]"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Dashing", "[", 
+          RowBox[{"{", 
+           RowBox[{"0.05", ",", " ", "0.05"}], "}"}], "]"}], ",", " ", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "visina"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", " ", "visina"}], "}"}]}], "}"}], "]"}]}], 
+        "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", " ", 
+            RowBox[{"-", "0.05"}]}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", 
+            RowBox[{"-", "0.05"}]}], "}"}]}], "}"}], "]"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Axes", "\[Rule]", 
+      RowBox[{"{", "True", "}"}]}], ",", "  ", 
+     RowBox[{"AxesLabel", "\[Rule]", "y"}], ",", " ", 
+     RowBox[{"AxesStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Thick", ",", " ", "Thin"}], "}"}]}], ",", " ", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "1"}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.15"}], ",", " ", 
+          RowBox[{"visina", "+", "0.15"}]}], "}"}]}], "}"}]}], ",", " ", 
+     RowBox[{"Ticks", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"False", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "h0", ",", " ", "visina"}], "}"}]}], "}"}]}]}], 
+    "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"visina", ",", " ", "H", ",", " ", "0"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7532503479301653`*^9, 3.753250352614086*^9}, {
+  3.753250499468044*^9, 3.7532506463126945`*^9}, {3.7532508639029117`*^9, 
+  3.753250864566077*^9}, {3.753250969008064*^9, 3.7532509796194906`*^9}, {
+  3.753251036265856*^9, 3.7532511219695454`*^9}, {3.7532512096973643`*^9, 
+  3.753251254305292*^9}, {3.7532515373908157`*^9, 3.753251578807146*^9}, {
+  3.7532516427427387`*^9, 
+  3.7532516830475197`*^9}},ExpressionUUID->"1538a955-f90b-46a3-9e7c-\
+12644b87dcf2"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`visina$$ = 1.434039306640625, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`visina$$], 2, 0}}, Typeset`size$$ = {
+    282., {213., 219.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`visina$83718$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`visina$$ = 2}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`visina$$, $CellContext`visina$83718$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics[{{
+          PointSize[0.1], Pink, 
+          Point[{0.5, $CellContext`visina$$}], 
+          Text[
+           Style["krogljica 1", Black, FontSize -> 10], {
+           0.7, $CellContext`visina$$ + 0.1}]}, {
+          Dashing[{0.05, 0.05}], 
+          Line[{{0, $CellContext`visina$$}, {1, $CellContext`visina$$}}]}, 
+         Line[{{0, -0.05}, {1, -0.05}}]}, Axes -> {True}, 
+        AxesLabel -> $CellContext`y, AxesStyle -> {Thick, Thin}, 
+        PlotRange -> {{0, 1}, {-0.15, $CellContext`visina$$ + 0.15}}, 
+        Ticks -> {False, {0, $CellContext`h0, $CellContext`visina$$}}], 
+      "Specifications" :> {{$CellContext`visina$$, 2, 0, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{358., {252., 258.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.753250569767043*^9, 3.7532506471702895`*^9, {3.753251045157185*^9, 
+   3.753251060052868*^9}, {3.7532511117356825`*^9, 3.7532511225300245`*^9}, {
+   3.753251232978392*^9, 3.7532512605930157`*^9}, {3.7532515556416636`*^9, 
+   3.7532515800601068`*^9}, {3.7532516497618833`*^9, 
+   3.7532516846593356`*^9}},ExpressionUUID->"18d9958a-b5ed-45ce-9235-\
+b69e74aa9696"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{766, 772},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 176, 3, 95, "Title",ExpressionUUID->"f2cac9ca-d34a-4f4e-88fb-fe62947d3557"],
+Cell[759, 27, 208, 3, 41, "Author",ExpressionUUID->"ff5adb2f-5e22-41aa-add1-cbbbf5532202"],
+Cell[CellGroupData[{
+Cell[992, 34, 190, 3, 67, "Chapter",ExpressionUUID->"1acc8103-d401-4fa3-88d2-96614c6ae747"],
+Cell[1185, 39, 249, 4, 33, "Text",ExpressionUUID->"89b7576c-1e1f-4de7-8fe8-090350a18f9e"],
+Cell[CellGroupData[{
+Cell[1459, 47, 156, 3, 69, "Section",ExpressionUUID->"b7d33372-c959-45a0-bedf-a32d0067f638"],
+Cell[1618, 52, 461, 9, 77, "Text",ExpressionUUID->"7a0985ae-9836-4603-8600-2922828893f4"],
+Cell[2082, 63, 678, 14, 97, "Input",ExpressionUUID->"6a4f55f0-6bfc-4b4b-bdbc-a9741a37aa3c"],
+Cell[CellGroupData[{
+Cell[2785, 81, 4000, 88, 211, "Input",ExpressionUUID->"20022fa6-9924-470f-b3dc-cd71ab50fbde"],
+Cell[6788, 171, 1416, 32, 456, "Output",ExpressionUUID->"cad5bb5b-ac41-47d6-9a4c-68169395d452"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8241, 208, 153, 3, 32, "Subsubsection",ExpressionUUID->"73cb2a16-40ae-40a1-a12e-2453a7403815"],
+Cell[8397, 213, 180, 3, 33, "Text",ExpressionUUID->"b4c9451f-930f-4bd0-8656-db7d8f83264e"],
+Cell[CellGroupData[{
+Cell[8602, 220, 492, 10, 87, "Input",ExpressionUUID->"d8e54c57-e908-492b-8100-1d551a919e08"],
+Cell[9097, 232, 213, 3, 39, "Output",ExpressionUUID->"dfa0f300-12a6-443c-9dc6-c97b46da06d9"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9359, 241, 158, 3, 32, "Subsubsection",ExpressionUUID->"a44c3739-1283-4dc5-aee8-187c0bfd154a"],
+Cell[9520, 246, 242, 5, 33, "Text",ExpressionUUID->"05a9d51c-6ae7-4fe2-add9-b6aa44e3322c"],
+Cell[CellGroupData[{
+Cell[9787, 255, 402, 8, 59, "Input",ExpressionUUID->"cbccda03-3a8b-4f5c-b59c-8921cb18d550"],
+Cell[10192, 265, 238, 5, 39, "Output",ExpressionUUID->"98c16037-8359-4095-aad9-e1bf95aa6ee0"]
+}, Open  ]],
+Cell[10445, 273, 443, 8, 77, "Text",ExpressionUUID->"a38f14b6-422f-4bcc-ae62-382341e27cd9"],
+Cell[10891, 283, 326, 7, 59, "Input",ExpressionUUID->"6476652d-89c9-48a5-aac3-dafa887700cd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11254, 295, 159, 3, 32, "Subsubsection",ExpressionUUID->"14d37ca4-0c50-4eef-8c40-30157c456303"],
+Cell[11416, 300, 212, 6, 33, "Text",ExpressionUUID->"9db7df2b-8088-4be9-aa48-9e80120f3bf3"],
+Cell[CellGroupData[{
+Cell[11653, 310, 397, 8, 59, "Input",ExpressionUUID->"549f5494-0fda-4ae3-ba20-6374adab0db0"],
+Cell[12053, 320, 197, 3, 39, "Output",ExpressionUUID->"936debf2-702f-4213-bd4b-f710b2a73a07"]
+}, Open  ]],
+Cell[12265, 326, 1286, 27, 85, "Input",ExpressionUUID->"152f0b11-bc94-432a-b22d-47378d6a411b"],
+Cell[CellGroupData[{
+Cell[13576, 357, 2461, 65, 211, "Input",ExpressionUUID->"74204724-db9d-48a7-bf44-9e38e91fcb88"],
+Cell[16040, 424, 1362, 35, 456, "Output",ExpressionUUID->"a157617d-7053-4e43-b86e-0ada6ff14beb"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17451, 465, 157, 3, 32, "Subsubsection",ExpressionUUID->"e5e4138b-971f-470d-b36d-e0066450b3f5"],
+Cell[17611, 470, 295, 7, 55, "Text",ExpressionUUID->"359234b2-6d91-40e9-afe1-f625f0fe58d8"],
+Cell[CellGroupData[{
+Cell[17931, 481, 562, 12, 87, "Input",ExpressionUUID->"5c9aab4e-5335-4a9c-b3c0-c109808b5f26"],
+Cell[18496, 495, 239, 5, 39, "Output",ExpressionUUID->"aed1335f-8211-4697-874e-bd6c4630cda5"]
+}, Open  ]],
+Cell[18750, 503, 720, 12, 99, "Text",ExpressionUUID->"82676589-d045-4b05-80db-da8f6766e73a"],
+Cell[19473, 517, 321, 7, 59, "Input",ExpressionUUID->"92ae568a-449c-4751-8255-e5bbe76fbaa0"],
+Cell[CellGroupData[{
+Cell[19819, 528, 3879, 99, 287, "Input",ExpressionUUID->"eec8ba2c-8e5f-4c67-9d6e-c2edbececfab"],
+Cell[23701, 629, 1392, 38, 456, "Output",ExpressionUUID->"5dc971fe-fba7-463b-84a8-c57f36da3db1"]
+}, Open  ]],
+Cell[25108, 670, 287, 6, 40, "SubsubitemParagraph",ExpressionUUID->"7d84e5a0-0d29-4f13-aca3-543832b2d8f9"],
+Cell[CellGroupData[{
+Cell[25420, 680, 3350, 88, 249, "Input",ExpressionUUID->"f201a4e3-9c45-4ea8-9802-379b6bde50f7"],
+Cell[28773, 770, 1639, 42, 456, "Output",ExpressionUUID->"5f80c9ba-994b-4ee7-9083-fad8acef73c8"]
+}, Open  ]],
+Cell[30427, 815, 288, 6, 22, "SubsubitemParagraph",ExpressionUUID->"09cb5c50-409a-4e2d-a2b5-882e9cf8b2c4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30752, 826, 156, 3, 32, "Subsubsection",ExpressionUUID->"ad35086c-3a9d-4a69-b37c-87abe2b96880"],
+Cell[30911, 831, 259, 6, 33, "Text",ExpressionUUID->"150685a7-e9e1-4d38-a323-1b1f582a1daf"],
+Cell[CellGroupData[{
+Cell[31195, 841, 727, 17, 125, "Input",ExpressionUUID->"493ff332-2526-4fc1-8874-4845fb279cf7"],
+Cell[31925, 860, 225, 4, 39, "Output",ExpressionUUID->"6c3dc560-4eb7-4c82-981f-d611c1e86b3c"],
+Cell[32153, 866, 242, 5, 39, "Output",ExpressionUUID->"5f34d3a2-9743-4546-b196-f2f768e787d3"],
+Cell[32398, 873, 223, 4, 39, "Output",ExpressionUUID->"0fa8e7b9-1f85-427a-b84c-c5353332a795"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32670, 883, 159, 3, 32, "Subsubsection",ExpressionUUID->"df3c3907-15de-4e40-82fb-71fe88759580"],
+Cell[32832, 888, 244, 6, 33, "Text",ExpressionUUID->"a063ab2d-0d74-463c-b91f-58779b0acee3"],
+Cell[CellGroupData[{
+Cell[33101, 898, 723, 17, 134, "Input",ExpressionUUID->"aef0e431-3869-4298-9233-d3a93261b4fb"],
+Cell[33827, 917, 237, 5, 39, "Output",ExpressionUUID->"90170b27-ce33-4cd4-bfff-6ca2d4df1c80"],
+Cell[34067, 924, 220, 4, 39, "Output",ExpressionUUID->"e37171e9-402b-405b-bafc-7040261e9acd"]
+}, Open  ]],
+Cell[34302, 931, 699, 12, 80, "SubitemParagraph",ExpressionUUID->"8cf368a4-12df-43fa-9932-a8f4f33010b0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35038, 948, 157, 3, 32, "Subsubsection",ExpressionUUID->"43e9f9ac-59bb-4aff-a28a-75eaa97eb70a"],
+Cell[35198, 953, 481, 9, 77, "Text",ExpressionUUID->"36daece5-06eb-4d18-8e52-56961e2c9f7d"],
+Cell[CellGroupData[{
+Cell[35704, 966, 2043, 44, 268, "Input",ExpressionUUID->"e780dfa5-1a8e-4fee-a7b5-9e1482233ad2"],
+Cell[37750, 1012, 172, 3, 39, "Output",ExpressionUUID->"98bb223b-ecee-4ac6-9403-63b9b836fefd"]
+}, Open  ]],
+Cell[37937, 1018, 83, 0, 23, "SubitemParagraph",ExpressionUUID->"d4a9e76c-c289-4c66-8075-7767997cc288"],
+Cell[38023, 1020, 577, 11, 77, "Text",ExpressionUUID->"1f957b1a-f926-49b9-99f2-40a286b1b1cd"],
+Cell[CellGroupData[{
+Cell[38625, 1035, 3446, 93, 287, "Input",ExpressionUUID->"681b0713-8cbe-4ec2-bef4-150cf9609aec"],
+Cell[42074, 1130, 1481, 39, 456, "Output",ExpressionUUID->"88cb95e2-b4c3-4414-83b4-8c42f39ff078"]
+}, Open  ]],
+Cell[43570, 1172, 271, 6, 22, "SubsubitemParagraph",ExpressionUUID->"513b84a5-d9af-41f0-9856-b2360567a830"],
+Cell[CellGroupData[{
+Cell[43866, 1182, 4490, 116, 325, "Input",ExpressionUUID->"a6f77b91-8139-4ca6-a4c6-7ba5b554b28c"],
+Cell[48359, 1300, 2475, 60, 456, "Output",ExpressionUUID->"d65f5b36-ecf2-41e0-ac55-6264821057da"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50883, 1366, 159, 3, 32, "Subsubsection",ExpressionUUID->"b70201d3-5d47-435c-bd0d-3754435ab74c"],
+Cell[51045, 1371, 398, 8, 55, "Text",ExpressionUUID->"fa9170e4-437f-4c67-8ba2-0088311cba03"],
+Cell[CellGroupData[{
+Cell[51468, 1383, 1066, 23, 172, "Input",ExpressionUUID->"965f5161-8574-4172-ba9f-8586545dabc2"],
+Cell[52537, 1408, 401, 6, 39, "Output",ExpressionUUID->"91424a96-73dc-435b-bf85-72e37dd6745b"],
+Cell[52941, 1416, 420, 7, 39, "Output",ExpressionUUID->"f1b26d21-35d7-46a1-b59d-3828151df924"]
+}, Open  ]],
+Cell[53376, 1426, 342, 7, 42, "SubitemParagraph",ExpressionUUID->"3429f757-77fa-42c3-82bb-0b2e0f88872a"],
+Cell[CellGroupData[{
+Cell[53743, 1437, 320, 8, 87, "Input",ExpressionUUID->"ddbb6198-ee59-4839-801d-5554917b46e0"],
+Cell[54066, 1447, 172, 3, 39, "Output",ExpressionUUID->"d8e50840-7e00-4d58-b264-79bef9b16b69"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54299, 1457, 155, 3, 69, "Section",ExpressionUUID->"f25758c1-cf7e-438c-85ad-c49a866244d9"],
+Cell[54457, 1462, 201, 3, 33, "Text",ExpressionUUID->"551da67c-8472-4245-868f-64203f7f7f44"],
+Cell[CellGroupData[{
+Cell[54683, 1469, 201, 3, 33, "Subsection",ExpressionUUID->"16d6b736-3ff1-4e91-9a60-5bc617a7d186"],
+Cell[CellGroupData[{
+Cell[54909, 1476, 3001, 75, 230, "Input",ExpressionUUID->"1538a955-f90b-46a3-9e7c-12644b87dcf2"],
+Cell[57913, 1553, 2845, 55, 536, "Output",ExpressionUUID->"18d9958a-b5ed-45ce-9235-b69e74aa9696"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
